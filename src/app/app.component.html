@@ -1,0 +1,50 @@
+<mat-sidenav-container class="tp-container">
+  <mat-sidenav mode="side" opened>
+    <section class="tp-section logo">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon style="color: rgb(214, 221, 221)">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="toolbar-lnk menu">
+        <button mat-menu-item routerLink="home">Home</button>
+
+        <button mat-menu-item>Seats</button>
+        <button mat-menu-item routerLink="locations">Locations</button>
+        <button mat-menu-item>Projects</button>
+
+        <button mat-menu-item routerLink="documents">Documents</button>
+      </mat-menu>
+
+      <span
+        ><img
+          id="logo"
+          src="/assets/LTI_Lets_solve_logo_white_png.png"
+          alt="LTI"
+        />
+      </span
+      >  <span id="logo2">Capacity Management</span>
+    </section>
+    <section class="tp-section">
+      <span></span>
+    </section>
+    <section class="tp-section">
+      <mat-tab-group dynamicHeight="true" selectedIndex="0" style="width: 100%"  (selectedTabChange)="onTabChanged($event)">
+        <mat-tab label="Locations">
+
+          <div style="margin :4px 3px 5px 3px">
+            <samp> Find &nbsp;</samp> <input mat-input />
+          </div>
+          <div>
+            <app-side-tree></app-side-tree>
+          </div>
+        </mat-tab>
+        <mat-tab label="Projects">
+          <div class="example-large-box mat-elevation-z4">Projects</div>
+          <samp> Find &nbsp;</samp> <input mat-input />
+        </mat-tab>
+      </mat-tab-group>
+    </section>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-nav></app-nav> <router-outlet></router-outlet
+  ></mat-sidenav-content>
+</mat-sidenav-container>
