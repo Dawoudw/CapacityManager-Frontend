@@ -1,0 +1,67 @@
+<div class="example-action-buttons">
+  <button
+    mat-button
+    (click)="accordion.openAll(); pnlHome._toggle(); pnlDocs._toggle()"
+  >
+    Expand All
+  </button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header
+      #pnlHome
+      (click)="navigate('home'); pnlHome._toggle();accordion.closeAll()"
+    >
+      <mat-panel-title>
+        <mat-icon>home</mat-icon>
+        <samp> Home</samp>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div style="width: 280px; margin: 0px 5px 0px 5px"></div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header (click)="navigate('locations')">
+      <mat-panel-title>
+        <mat-icon svgIcon="location"></mat-icon>
+        <samp> Locations</samp>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+      <app-side-tree></app-side-tree>
+    </ng-template>
+
+    <!-- <div style="width: 280px; margin: 0px 5px 0px 5px">
+
+    </div> -->
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>cases</mat-icon>
+        <samp> Projects</samp>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent> </ng-template>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon> supervisor_account</mat-icon>
+        <samp> Users</samp>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent> </ng-template>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header
+      #pnlDocs
+      (click)="navigate('documents'); pnlDocs._toggle();accordion.closeAll()"
+    >
+      <mat-panel-title>
+        <mat-icon>file_present</mat-icon>
+        <samp> Documents</samp>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>

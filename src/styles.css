@@ -2,6 +2,7 @@
 
 html, body {
   height: 100%;
+  background-color: rgb(2, 0, 0, 0.808);
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   background-color: rgba(248, 143, 157, 0.842);
   color: rgb(0, 0, 0);
 }
+
 .red-snackbar .mat-button-wrapper {
   /* background-color: rgba(2, 2, 2, 0.918); */
   color: rgb(255, 255, 255);
@@ -21,12 +23,13 @@ body {
   border-radius: 2px;
   /* width: 40px !important; height: 40px !important; */
 }
+
 .red-snackbar:hover .mat-button-wrapper {
   /* background-color: rgba(2, 2, 2, 0.918); */
   color: rgb(122, 7, 26);
-
   /* width: 40px !important; height: 40px !important; */
 }
+
 .blue-snackbar {
   background-color: rgba(33, 111, 212, 0.918);
 }
@@ -35,21 +38,21 @@ body {
   background-color: rgba(230, 233, 70, 0.829);
   color: rgb(0, 0, 0);
 }
+
 .yellow-snackbar .mat-button-wrapper {
   /* background-color: rgba(2, 2, 2, 0.918); */
   color: rgb(122, 7, 26);
   padding: 5px;
   border: 1px solid rgb(90, 84, 1);
   border-radius: 2px;
-
 }
+
 .yellow-snackbar:hover .mat-button-wrapper {
   /* background-color: rgba(2, 2, 2, 0.918); */
- color: rgb(219, 2, 74);
-
-
+  color: rgb(219, 2, 74);
   /* width: 40px !important; height: 40px !important; */
 }
+
 .green-snackbar {
   background-color: rgba(42, 151, 91, 0.89);
   color: #ffff
@@ -63,12 +66,13 @@ body {
   border-radius: 2px;
   /* width: 40px !important; height: 40px !important; */
 }
+
 .green-snackbar:hover .mat-button-wrapper {
   /* background-color: rgba(2, 2, 2, 0.918); */
   color: rgb(7, 122, 38);
-
   /* width: 40px !important; height: 40px !important; */
 }
+
 .mainDiv {
   display: flex;
   columns: 3;
@@ -78,9 +82,11 @@ body {
 .divCol25 {
   width: 25%;
 }
+
 .divCol50 {
   width: 50%;
 }
+
 .alert-danger {
   background-color: rgba(250, 136, 151, 0.781);
   color: rgb(99, 2, 2);
@@ -90,25 +96,25 @@ body {
   width: 80%;
   border-radius: 7px;
 }
-.Warn  {
+
+.Warn {
   background-color: rgba(229, 231, 104, 0.829);
   color: rgb(0, 0, 0);
   height: 50px;
   width: 80%;
   margin: 10%;
   text-align: center;
- padding-top: 30px;
- font-size: 16px;
-
+  padding-top: 30px;
+  font-size: 16px;
 }
-.Info  {
+
+.Info {
   background-color: rgba(131, 185, 255, 0.925);
   color: rgba(3, 3, 22, 0.911);
   height: 50px;
   width: 80%;
   margin: 10%;
   text-align: center;
- padding-top: 30px;
- font-size: 16px;
-
+  padding-top: 30px;
+  font-size: 16px;
 }

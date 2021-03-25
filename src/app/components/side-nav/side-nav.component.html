@@ -1,33 +1,55 @@
-<ng-container *ngIf="shouldRun">
-  <mat-toolbar class="example-header">Header</mat-toolbar>
+<mat-sidenav-container class="tp-container">
+  <mat-sidenav mode="side" opened>
+    <section class="tp-section logo">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon style="color: rgb(214, 221, 221)">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="toolbar-lnk menu">
+        <button mat-menu-item routerLink="home">Home</button>
 
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
-                 [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
-                 [fixedBottomGap]="options.value.bottom">
-      {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
-    </mat-sidenav>
+        <button mat-menu-item>Seats</button>
+        <button mat-menu-item routerLink="locations">Locations</button>
+        <button mat-menu-item>Projects</button>
 
-    <mat-sidenav-content [formGroup]="options">
-      <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
-      <p><mat-form-field>
-        <mat-label>Top gap</mat-label>
-        <input matInput type="number" formControlName="top">
-      </mat-form-field></p>
-      <p><mat-form-field>
-        <mat-label>Bottom gap</mat-label>
-        <input matInput type="number" formControlName="bottom">
-      </mat-form-field></p>
-      <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+        <button mat-menu-item routerLink="documents">Documents</button>
+      </mat-menu>
 
-  <mat-toolbar class="example-footer">Footer</mat-toolbar>
-</ng-container>
-
-<div *ngIf="!shouldRun">Please open on StackBlitz to see result</div>
-
-
-<!-- Copyright 2020 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
+      <span
+        ><img
+          id="logo"
+          src="/assets/LTI_Lets_solve_logo_white_png.png"
+          alt="LTI"
+        />
+      </span>
+      <span id="logo2">Capacity Management</span>
+    </section>
+    <section class="tp-section">
+      <span></span>
+    </section>
+    <section class="tp-section">
+      <app-expansion-menu></app-expansion-menu>
+      <!-- <mat-tab-group
+        dynamicHeight="true"
+        selectedIndex="0"
+        style="width: 100%"
+        (selectedTabChange)="onTabChanged($event)"
+      >
+        <mat-tab label="Locations">
+          <div style="margin: 4px 3px 5px 3px">
+            <samp> Find &nbsp;</samp> <input mat-input />
+          </div>
+          <div>
+            <app-side-tree></app-side-tree>
+          </div>
+        </mat-tab>
+        <mat-tab label="Projects">
+          <div class="example-large-box mat-elevation-z4">Projects</div>
+          <samp> Find &nbsp;</samp> <input mat-input />
+        </mat-tab>
+      </mat-tab-group> -->
+    </section>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

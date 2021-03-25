@@ -38,6 +38,7 @@ import { DemoMaterialModule } from './modules/mterials/mterials.module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { SideTreeComponent } from './components/side-tree/side-tree.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ExpansionMenuComponent } from './components/expansion-menu/expansion-menu.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     SideNavComponent,
     SideTreeComponent,
     ProjectsComponent,
+    ExpansionMenuComponent,
   ],
   imports: [
     BrowserModule,

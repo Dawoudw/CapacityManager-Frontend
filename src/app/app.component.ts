@@ -9,17 +9,7 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'iFulfill';
+  title = 'Capacity Management';
   constructor(private userSrv: UsersService, private router: Router) {}
-  onTabChanged(event: MatTabChangeEvent): void {
-    switch (event.index) {
-      case 0:
-        this.router.navigate(['/locations']);
-        break;
-      case 1:
-        this.router.navigate(['/projects']);
 
-        break;
-    }
-  }
 }

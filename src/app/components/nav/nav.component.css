@@ -42,16 +42,7 @@
   top: 10px;
 }
 
-#logo2{
-  position: absolute;
-  margin-left: 135px;
-  height: 40%;
-  top: 20px;
-  font-family: Raleway, sans-serif;
-  font-weight: 900;
-  letter-spacing: 3px;
-  float: left;
-}
+
 
 #user{
   position: absolute;
