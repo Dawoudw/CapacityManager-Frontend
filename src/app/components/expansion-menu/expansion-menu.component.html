@@ -11,7 +11,7 @@
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header
       #pnlHome
-      (click)="navigate('home'); pnlHome._toggle();accordion.closeAll()"
+      (click)="navigate('home'); pnlHome._toggle(); accordion.closeAll()"
     >
       <mat-panel-title>
         <mat-icon>home</mat-icon>
@@ -51,12 +51,14 @@
         <samp> Users</samp>
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <ng-template matExpansionPanelContent> </ng-template>
+    <ng-template matExpansionPanelContent>
+      <app-locations-tree></app-locations-tree
+    ></ng-template>
   </mat-expansion-panel>
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header
       #pnlDocs
-      (click)="navigate('documents'); pnlDocs._toggle();accordion.closeAll()"
+      (click)="navigate('documents'); pnlDocs._toggle(); accordion.closeAll()"
     >
       <mat-panel-title>
         <mat-icon>file_present</mat-icon>

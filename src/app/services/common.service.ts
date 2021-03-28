@@ -1,9 +1,7 @@
-import { User } from './../models/User';
-import { UsersService } from './users.service';
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { EventEmitter, Injectable } from '@angular/core';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { dateInputsHaveChanged } from '@angular/material/datepicker/datepicker-input-base';
+
 import { FormGroup } from '@angular/forms';
 @Injectable({
   providedIn: 'root',
@@ -14,6 +12,7 @@ export class CommonService {
   static FeaturesPath = `https://34a2a1pxbl.execute-api.us-east-2.amazonaws.com/dev/features`;
   static UsersPath = `https://34a2a1pxbl.execute-api.us-east-2.amazonaws.com/dev/users`;
 
+  public navigationChange: EventEmitter<string> = new EventEmitter<string>();
   constructor(private msgSnakBar: MatSnackBar) {
     // this.CurrentUser = userService.getUserById(
     //   '35d8d84f-f8f6-40e1-9a61-37ec8446d65f'

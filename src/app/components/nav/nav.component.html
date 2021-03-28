@@ -1,38 +1,59 @@
-<!-- <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav-content> -->
 <mat-toolbar color="primary">
-  <span>
-    <span><mat-icon class="user-icon">account_box</mat-icon></span>
-    <span>
-      Welcome
-      <span style="color: rgb(245, 76, 76); margin-right: 50px">{{
-        "WAEL DAWOUD"
-      }}</span>
-    </span>
+  <span *ngIf="pageName">
+    <!-- <span><mat-icon class="user-icon">more_vert</mat-icon></span> -->
+
+    <span style="color: rgb(255, 56, 56); margin-right: 15px">{{
+      pageName | titlecase
+    }}</span>
   </span>
-
-  <!-- <span id="user">
-        Welcome,<span style="color: gold">{{ CurrentUser }}</span>
-      </span> -->
-
   <span class="spacer"></span>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item>
+      <a mat-list-item routerLink="login" class="menuLink">
+        <span (click)="userServ.signOut()" *ngIf="userServ.isLoggedIn()"
+          >SignOut</span
+        >
+        <span *ngIf="!userServ.isLoggedIn()">SignIn</span></a
+      >
+    </button>
+    <button mat-menu-item>
+      <a mat-list-item routerLink="login" class="menuLink">
+        <span (click)="userServ.signOut()" *ngIf="userServ.isLoggedIn()"
+          >SignOut</span
+        >
+        <span *ngIf="!userServ.isLoggedIn()">My Profile</span></a
+      >
+    </button>
+  </mat-menu>
 
-  <a
-    mat-list-item
-    routerLink="login"
-    style="color: rgb(248, 47, 47); right: -4%; position: relative"
-  >
-    <span (click)="userServ.signOut()" *ngIf="userServ.isLoggedIn()"
-      >SignOut</span
-    >
-    <span *ngIf="!userServ.isLoggedIn()">SignIn</span></a
+  <mat-button-toggle disableRipple="true" disabled="true">
+    <span>
+      <span><mat-icon class="user-icon">account_box</mat-icon></span>
+      <span>
+        Welcome
+        <span style="color: rgb(245, 76, 76); margin-right: 15px">{{
+          "WAEL DAWOUD"
+        }}</span>
+      </span>
+    </span>
+    <span
+      ><mat-icon
+        [matMenuTriggerFor]="appMenu"
+        style="
+          font-weight: 700 !important;
+          cursor: pointer;
+          margin-top: 15px !important;
+        "
+        >arrow_drop_down</mat-icon
+      ></span
+    ></mat-button-toggle
   >
 
-  <button
+  <!-- <button
     mat-raised-button
     [ngClass]="{ hiddenLinks: (isHandset$ | async) === true }"
     class="app-info"
-  ></button>
+  ></button> -->
   <ng-content></ng-content>
 </mat-toolbar>
 

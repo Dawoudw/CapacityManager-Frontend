@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-
-
 .sidenav-container {
   height: fit-content;
-
 }
 
 .sidenav {
@@ -19,59 +16,112 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-
   z-index: 2;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.hiddenLinks{
+.hiddenLinks {
   display: none;
 }
 
-.spacer{
+.spacer {
   flex: 1 1 auto;
 }
 
-#logo{
+#logo {
   margin-left: 10px;
   position: absolute;
   height: 70%;
   top: 10px;
 }
 
-
-
-#user{
+#user {
   position: absolute;
-  margin-left:400px;
+  margin-left: 400px;
   font-family: Raleway, sans-serif;
   font-weight: 900;
 }
 
-li{
+li {
   list-style: none;
   padding: 10px;
 }
 
-.toolbar-lnk{
+.toolbar-lnk {
   display: inline-block;
   font-family: Raleway, sans-serif;
   font-weight: bolder;
-  margin: 0 10px;  color: #ffc400;
+  margin: 0 10px;
+  color: #ffc400;
 }
-.user-icon.material-icons
-{
-vertical-align: top;
-margin-top: 4px;
+
+.user-icon.material-icons {
+  vertical-align: middle;
+  margin-bottom: 4px;
 }
-@media (max-width: 800px){
-  .toolbar-lnk{
-    display:none;
+
+/deep/ .mat-button-toggle-appearance-standard, .mat-button-toggle-standalone {
+  background: #212121 !important;
+  color: white;
+  box-shadow: none;
+}
+
+/deep/.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  padding: 0px !important;
+  cursor: default !important;
+}
+
+/deep/ .mat-menu-item {
+  -webkit-tap-highlight-color: rgb(245, 76, 76);
+  line-height: 32px;
+  height: 32px;
+  padding: 0px 12px;
+  background: rgb(58, 58, 58);
+  margin: 0px;
+}
+
+/deep/ .mat-menu-item:hover {
+  background: rgb(245, 76, 76) !important;
+  color: white !important;
+}
+
+.menuLink {
+  /* background: rgb(58, 58, 58); */
+  color: rgb(248, 47, 47);
+  white-space: pre-line;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: block;
+  background: transparent;
+}
+
+.menuLink:hover {
+  /* background: rgb(248, 47, 47)!important; */
+  color: white!important;
+  white-space: pre-line;
+  font-weight: normal;
+  background: transparent;
+}
+
+/deep/ .mat-menu-content:not(:empty) {
+  padding: 0px !important;
+  display: list-item;
+}
+
+/* /deep/ .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  color: white;
+}
+/deep/ .mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
+  background: #212121 !important;
+  color: white;
+  box-shadow: none;
+} */
+
+@media (max-width: 800px) {
+  .toolbar-lnk {
+    display: none;
   }
-
 }
-
-

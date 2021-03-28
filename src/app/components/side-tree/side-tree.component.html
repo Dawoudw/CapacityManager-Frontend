@@ -1,8 +1,9 @@
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" style="color: red;">
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl"  >
   <mat-tree-node
     *matTreeNodeDef="let node"
     matTreeNodeToggle
-    matTreeNodePadding
+    matTreeNodePadding ="2"
+
   >
     <button mat-icon-button disabled></button>
     <mat-checkbox
@@ -13,7 +14,7 @@
     >
   </mat-tree-node>
 
-  <mat-tree-node
+  <!-- <mat-tree-node
     *matTreeNodeDef="let node; when: hasNoContent"
     matTreeNodePadding
   >
@@ -23,7 +24,7 @@
       <input matInput #itemValue placeholder="Ex. Lettuce" />
     </mat-form-field>
     <button mat-button (click)="saveNode(node, itemValue.value)">Save</button>
-  </mat-tree-node>
+  </mat-tree-node> -->
 
   <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
     <button
@@ -41,8 +42,11 @@
       (change)="todoItemSelectionToggle(node)"
       >{{ node.item }}</mat-checkbox
     >
-    <button mat-icon-button (click)="addNewItem(node)">
+    <!-- <button mat-icon-button (click)="addNewItem(node)">
       <mat-icon>add</mat-icon>
-    </button>
+    </button> -->
   </mat-tree-node>
 </mat-tree>
+
+
+

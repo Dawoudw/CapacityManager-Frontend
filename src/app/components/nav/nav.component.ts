@@ -20,11 +20,12 @@ export class NavComponent implements OnInit, AfterViewInit {
       map((result) => result.matches),
       shareReplay()
     );
-
+  pageName;
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
-    public userServ: UsersService
+    public userServ: UsersService,
+    private comnServ: CommonService
   ) {}
   ngAfterViewInit(): void {
     if (!this.CurrentUser) {
@@ -39,7 +40,9 @@ export class NavComponent implements OnInit, AfterViewInit {
     //     .catch(() => (this.CurrentUser = ''));
 
     // this.CurrentUser = this.userServ.getCurrentUser()?.username;
-
+    this.comnServ.navigationChange.subscribe((nav) => {
+      nav ? (this.pageName = nav) : '';
+    });
     this.userServ.userChange.subscribe((usr) => {
       this.CurrentUser = usr?.username;
     });

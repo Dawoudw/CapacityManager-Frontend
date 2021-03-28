@@ -1,5 +1,12 @@
+import { CommonService } from 'src/app/services/common.service';
 import { Router } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -14,7 +21,8 @@ export class ExpansionMenuComponent implements OnInit {
   constructor(
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    public router: Router
+    public router: Router,
+    private comnServ: CommonService
   ) {
     iconRegistry.addSvgIconLiteral(
       'location',
@@ -25,6 +33,7 @@ export class ExpansionMenuComponent implements OnInit {
   ngOnInit(): void {}
 
   navigate(val) {
-    this.router.navigate([`/${val}`])
+    // this.comnServ.navigationChange.emit(val);
+    this.router.navigate([`/${val}`]);
   }
 }

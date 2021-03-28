@@ -1,0 +1,8 @@
+  /deep/ .treeview-container .row-item .bi {
+    cursor: pointer;
+    margin-right: .3rem;
+    display: list-item;
+    position: absolute;
+    margin-inline: -14px;
+    margin-top: 3px;
+  }
