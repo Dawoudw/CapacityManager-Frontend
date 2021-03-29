@@ -1,8 +1,44 @@
-  /deep/ .treeview-container .row-item .bi {
-    cursor: pointer;
-    margin-right: .3rem;
-    display: list-item;
-    position: absolute;
-    margin-inline: -14px;
-    margin-top: 3px;
-  }
+/deep/ .treeview-container .row-item {
+  padding-top: 2px !important;
+  margin-top: 0px !important;
+  display: flex !important;
+}
+/deep/ .treeview-container.row-item.bi {
+  cursor: pointer;
+  margin-right: 0.3rem;
+  display: list-item;
+  padding-top: -5px !important;
+}
+/deep/ .treeview-item {
+  margin-left: 2rem;
+  margin-top: -4px !important;
+}
+/deep/ .treeview-header {
+  display: flex;
+  margin-top: 5px !important;
+  width: auto;
+}
+
+/deep/ .treeview-header .row-all .bi {
+  font-weight: 100;
+  cursor: pointer;
+
+  margin-left:  3em;
+
+  margin-top: 5px;
+  font-size: 20px;
+  color: darkred;
+}
+
+/deep/.treeview-header .row-filter {
+  margin-bottom: 0.5rem;
+  /* width: 152px; */
+  margin-bottom: 10px !important;
+  border-bottom: grey 1px solid;
+}
+
+/deep/ .treeview-header .row-filter input {
+
+  width: 200px !important;
+
+}

@@ -1,0 +1,17 @@
+export enum BaseLocation {
+  NY = 1,
+  NJ = 2,
+  CT = 3,
+  TX = 4,
+  FL = 5,
+  Mumbai = 6,
+  Delhi = 7,
+  Bangalore = 8,
+  ABU = 9,
+  SHA = 10,
+  AJM = 11,
+  QUE = 12,
+  ONT = 13,
+  MAN = 14,
+  SASK = 15,
+}
