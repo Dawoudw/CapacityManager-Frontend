@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { element } from 'protractor';
+import { Component, OnInit, enableProdMode } from '@angular/core';
 import { TreeviewItem, TreeviewConfig } from 'ngx-treeview';
 import { BaseLocation } from 'src/app/enums/base-location.enum';
 import { Buildings } from 'src/app/enums/buildings.enum';
@@ -96,7 +97,6 @@ export class LocationsTreeComponent implements OnInit {
     hasCollapseExpand: true,
     decoupleChildFromParent: false,
     hasAllCheckBox: false,
-
   });
   ngOnInit() {
     this.fillLocations();
@@ -160,6 +160,7 @@ export class LocationsTreeComponent implements OnInit {
       }
     });
 
+    //#region Static Binding
     // this.items = [
     //   new TreeviewItem({
     //     text: 'IT',
@@ -200,5 +201,10 @@ export class LocationsTreeComponent implements OnInit {
     //     ],
     //   }),
     // ];
+    //#endregion
+  }
+
+  onSelectedChange(e) {
+    alert(e);
   }
 }
