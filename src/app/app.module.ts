@@ -30,6 +30,9 @@ import { DemoMaterialModule } from './modules/mterials/mterials.module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { SideTreeComponent } from './components/side-tree/side-tree.component';
 import { ExpansionMenuComponent } from './components/expansion-menu/expansion-menu.component';
+import { LocationsTreeComponent } from './components/locations-tree/locations-tree.component';
+import {TreeviewModule} from "ngx-treeview";
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { ExpansionMenuComponent } from './components/expansion-menu/expansion-me
     SideNavComponent,
     SideTreeComponent,
     ExpansionMenuComponent,
-
+    LocationsTreeComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { ExpansionMenuComponent } from './components/expansion-menu/expansion-me
     MatNativeDateModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    TreeviewModule.forRoot(),
   ],
 
 

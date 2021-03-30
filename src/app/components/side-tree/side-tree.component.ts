@@ -28,9 +28,9 @@ export class TodoItemFlatNode {
  */
 const TREE_DATA = {
   USA: {
-    LTI_Jersy: { IT: null, HR: ['PS:100125', 'PS:100126'], Finance: null },
+    LTI_Jersey: { IT: null, HR: ['PS:100125', 'PS:100126'], Finance: null },
 
-    LTI_NewYourk: [{}],
+    LTI_NewYork: [{}],
   },
   INDIA: {
     LTI_Mumbai: { IT: null, HR: ['PS:200156', 'PS:200178'], Development: null },
@@ -90,7 +90,7 @@ export class ChecklistDatabase {
   /** Add an item to to-do list */
   insertItem(parent: TodoItemNode, name: string) {
     if (parent.children) {
-        parent.children.push({ item: name } as TodoItemNode);
+      parent.children.push({ item: name } as TodoItemNode);
       this.dataChange.next(this.data);
     }
   }
