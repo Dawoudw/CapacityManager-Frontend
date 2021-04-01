@@ -1,3 +1,4 @@
+import { LocationsTreeComponent } from './components/locations-tree/locations-tree.component';
 import { UsersService } from './services/users.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -30,15 +31,27 @@ import { DemoMaterialModule } from './modules/mterials/mterials.module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { SideTreeComponent } from './components/side-tree/side-tree.component';
 import { ExpansionMenuComponent } from './components/expansion-menu/expansion-menu.component';
+ 
 import { LocationsTreeComponent } from './components/locations-tree/locations-tree.component';
 import {TreeviewModule} from "ngx-treeview";
 import { LocationComponent } from './components/location/location.component';
-
+ 
+import { TreeviewModule } from 'ngx-treeview';
+ 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
+ 
+    TableComponent,
+ 
+    EditIssuesComponent,
+    NewIssuePopupComponent,
+    LoginComponent,
+    RegistrationComponent,
+    GalleryComponent,
+ 
     SideNavComponent,
     SideTreeComponent,
     ExpansionMenuComponent,
@@ -62,8 +75,6 @@ import { LocationComponent } from './components/location/location.component';
     TreeviewModule.forRoot(),
   ],
 
-
-
   providers: [
     CommonService,
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
@@ -75,6 +86,6 @@ import { LocationComponent } from './components/location/location.component';
     RemarksService,
     UsersService,
   ],
-  bootstrap: [  AppComponent,NavComponent],
+  bootstrap: [AppComponent, NavComponent],
 })
 export class AppModule {}
