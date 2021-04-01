@@ -1,180 +1,75 @@
-<div class="container-div">
-  <div>
-    <mat-card class="example-card" id="card1" #card1 name="card1">
-      <mat-card-header>
-        <!-- <div mat-card-avatar class="added-image"></div> -->
-        <mat-card-title style="margin: 8px 0px 0px -10px"
-          >Summary 1</mat-card-title
-        >
-      </mat-card-header>
+<div class="flex-container ">
 
-      <mat-card-content>
-        <!-- <mat-spinner class="spinner-container" *ngIf="!isRecentlyOpenedLaoded"></mat-spinner>
-        <mat-list *ngIf="RecentlyOpened?.length > 0">
-          <div
-            *ngFor="
-              let item of RecentlyOpened;
-              let i = index;
-              first as isFirst;
-              last as isLast
-            "
-          >
-            <mat-list-item
-              style="
-                min-height: 50px !important;
-                vertical-align: middle;
-                padding-top: 8px !important;
-              "
-            >
-              <div style="display: flex; flex-direction: column">
-                <div style="width: 100%">
-                  <a (click)="openNewDialog(item)"> {{ item?.title }}</a>
-                </div>
-
-                <div style="width: 100%">
-                  <small>{{ item.reported_by }}, &nbsp;</small>
-
-                  <small>{{ item.reported_at | date: "M/dd/yy h:mm a" }}</small>
-                </div>
-              </div>
-            </mat-list-item>
-            <mat-divider *ngIf="!isLast"></mat-divider>
-          </div>
-        </mat-list>
-        <div
-          *ngIf="
-            isRecentlyOpenedLaoded &&
-            (!RecentlyOpened || RecentlyOpened?.length < 1)
-          "
-          class="Info"
-        >
-          <span>There is no issue(s) has been posted recently . </span>
-        </div> -->
-      </mat-card-content>
-    </mat-card>
+  <div class="bar-holder">
+    <form class="search-bar">
+      <mat-form-field style="width: 350px; height: 72px">
+        <mat-label class="search-lbl">Search for Seats
+          <mat-icon class="search">search</mat-icon>
+        </mat-label>
+        <input (keyup)="applyFilter($event.target.value)" name="search" matInput>
+      </mat-form-field>
+    </form>
   </div>
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <!-- <div mat-card-avatar class="closed-image"></div> -->
-        <mat-card-title style="margin: 8px 0px 0px -10px"
-          >Summary 2</mat-card-title
-        >
-      </mat-card-header>
 
-      <mat-card-content>
-        <!-- <mat-spinner class="spinner-container" *ngIf="!isRecentlyClosedLaoded"></mat-spinner>
-        <mat-list *ngIf="RecentlyClosed?.length > 0">
-          <div *ngFor="let item of RecentlyClosed">
-            <mat-list-item
-              style="
-                min-height: 50px !important;
-                vertical-align: middle;
-                padding-top: 8px !important;
-              "
-            >
-              <div style="display: flex; flex-direction: column">
-                <div style="width: 100%">
-                  <a (click)="openNewDialog(item)"> {{ item?.title }}</a>
-                </div>
+  <span class="spacer"></span>
 
-                <div style="width: 100%">
-                  <small>{{ item.reported_by }}, &nbsp;</small>
-
-                  <small>{{ item.reported_at | date: "M/dd/yy h:mm a" }}</small>
-                </div>
-              </div>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-          </div>
-        </mat-list>
-        <div
-          *ngIf="
-            isRecentlyClosedLaoded &&
-            (!RecentlyClosed || RecentlyClosed?.length < 1)
-          "
-          class="Info"
-        >
-          <span>There is no issue(s) has been closed recently . </span>
-        </div> -->
-      </mat-card-content>
-    </mat-card>
+  <div class="filter-buttons">
+    <button mat-raised-button class="filter-button" color="accent">Sort By Location</button>
+    <button mat-raised-button class="filter-button" color="accent">Sort By Availability</button>
+    <button mat-raised-button class="filter-button" color="accent">Sort By Cost</button>
   </div>
-  <div>
-    <mat-card class="example-card" id="card4" #card4 name="card4">
+
+
+
+</div>
+
+
+
+<div class="flex-container">
+    <mat-card class="flex-child"  *ngFor="let seat of currentItemsToShow">
+
       <mat-card-header>
-        <!-- <div mat-card-avatar class="assigned-image"></div> -->
-        <mat-card-title style="margin: 8px 0px 0px -10px"
-          > Summary 3</mat-card-title
-        >
+
+        <mat-card-title class="card-title">
+          Seat # {{seat.seatId}}
+        </mat-card-title>
+
       </mat-card-header>
 
+      <hr class="header-line">
+
       <mat-card-content>
-        <!-- <mat-spinner class="spinner-container" *ngIf=" !isAssignedIssuesLaoded"></mat-spinner>
-        <mat-list *ngIf="AssignedIssues?.length > 0">
+        <div class="card-header-parent">
           <div
-            *ngFor="
-              let item of AssignedIssues;
-              let i = index;
-              first as isFirst;
-              last as isLast
-            "
-          >
-            <mat-list-item
-              style="
-                min-height: 50px !important;
-                vertical-align: middle;
-                padding-top: 8px !important;
-              "
-            >
-              <div style="display: flex; flex-direction: column">
-                <div style="width: 100%">
-                  <a (click)="openNewDialog(item)"> {{ item?.title }}</a>
-                </div>
-
-                <div style="width: 100%">
-                  <small>{{ item.reported_by }}, &nbsp;</small>
-
-                  <small>{{ item.reported_at | date: "M/dd/yy h:mm a" }}</small>
-                </div>
-              </div>
-            </mat-list-item>
-            <mat-divider *ngIf="!isLast"></mat-divider>
+            class="card-header">Availability
           </div>
-        </mat-list>
-        <div
-          *ngIf="
-            isAssignedIssuesLaoded &&
-            (!AssignedIssues || AssignedIssues?.length < 1)
-          "
-          class="Warn"
-        >
-          <span *ngIf="userServ.isLoggedIn()"
-            >There is no issues pending on you .</span
-          >
-          <span *ngIf="!userServ.isLoggedIn()"
-            >Please SignIn to see the content .
+          <div class="separator">:</div>
+          <span [ngClass] = "{'open' : seat.availabilityStatus == 'Open',
+                            'closed' : seat.availabilityStatus == 'Closed'}">
+                            {{ seat.availabilityStatus}}
           </span>
-        </div> -->
+        </div>
+
+        <div class="card-header-parent">
+          <div class="card-header"> Location </div>
+          <div class="separator">:</div>
+          <span class="card-header-content">{{seat.seatLocation}}</span>
+        </div>
+
+        <div class="card-header-parent">
+          <div class="card-header">Seat Cost </div>
+          <div class="separator">:</div>
+          <span class="card-header-content">{{seat.cost | currency}}</span>
+        </div>
+
       </mat-card-content>
     </mat-card>
-  </div>
-  <div>
-    <mat-card class="example-card">
-      <mat-card-header style="display: flex; vertical-align: middle">
-        <!-- <span mat-card-avatar class="statistics-image"> </span> -->
-        <mat-card-title style="margin: 8px 0px 0px -10px">
-          Summary 4</mat-card-title
-        >
-
-        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-      </mat-card-header>
-      <!-- <img mat-card-image src="../../../assets/InFML.png" alt="Charts" /> -->
-
-      <!-- <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions> -->
-    </mat-card>
-  </div>
+  <mat-paginator
+    #paginator
+    (page)="onPageChange($event)"
+    [length]="dataSource?.data.length"
+    [pageIndex]="0"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[3, 9, 18, 36]">
+  </mat-paginator>
 </div>

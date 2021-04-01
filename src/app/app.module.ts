@@ -10,9 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
-import { TableComponent } from './components/table/table.component';
 
-import { EditIssuesComponent } from './components/edit-issues/edit-issues.component';
 
 import {
   ErrorStateMatcher,
@@ -22,42 +20,43 @@ import {
 import { CommonService } from './services/common.service';
 
 // Imported by Jian Qiu on 1.29.2021
-import { NewIssuePopupComponent } from './components/dialogs/new-issue-popup/new-issue-popup.component';
 import { IssueService } from './services/issue.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { RemarksService } from './services/remarks.service';
-import { LoginComponent } from './components/login/login.component';
-import { RegistrationComponent } from './components/registration/registration.component';
-
-import { GalleryComponent } from './components/gallery/gallery.component';
-import { LocactionComponent } from './components/locaction/locaction.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 import { MatNativeDateModule } from '@angular/material/core';
 import { DemoMaterialModule } from './modules/mterials/mterials.module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { SideTreeComponent } from './components/side-tree/side-tree.component';
-import { ProjectsComponent } from './components/projects/projects.component';
 import { ExpansionMenuComponent } from './components/expansion-menu/expansion-menu.component';
+ 
+import { LocationsTreeComponent } from './components/locations-tree/locations-tree.component';
+import {TreeviewModule} from "ngx-treeview";
+import { LocationComponent } from './components/location/location.component';
+ 
 import { TreeviewModule } from 'ngx-treeview';
+ 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
+ 
     TableComponent,
-    LocationsTreeComponent,
+ 
     EditIssuesComponent,
     NewIssuePopupComponent,
     LoginComponent,
     RegistrationComponent,
     GalleryComponent,
-    LocactionComponent,
+ 
     SideNavComponent,
     SideTreeComponent,
-    ProjectsComponent,
     ExpansionMenuComponent,
+    LocationsTreeComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,

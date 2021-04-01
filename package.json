@@ -23,6 +23,7 @@
     "@angular/router": "~11.0.9",
     "git": "^0.1.5",
     "ngx-lightbox": "^2.2.2",
+    "ngx-treeview": "^10.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

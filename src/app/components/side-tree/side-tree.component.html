@@ -10,7 +10,7 @@
       class="checklist-leaf-node"
       [checked]="checklistSelection.isSelected(node)"
       (change)="todoLeafItemSelectionToggle(node)"
-      >{{ node.item }}</mat-checkbox
+    >{{ node.item }}</mat-checkbox
     >
   </mat-tree-node>
 
@@ -40,7 +40,7 @@
       [checked]="descendantsAllSelected(node)"
       [indeterminate]="descendantsPartiallySelected(node)"
       (change)="todoItemSelectionToggle(node)"
-      >{{ node.item }}</mat-checkbox
+    >{{ node.item }}</mat-checkbox
     >
     <!-- <button mat-icon-button (click)="addNewItem(node)">
       <mat-icon>add</mat-icon>
